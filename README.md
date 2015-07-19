@@ -1,8 +1,8 @@
-ones
+Ones
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Creates a ones-filled matrix or array.
+> Creates a ones-filled [matrix](https://github.com/dstructs/matrix) or array.
 
 
 ## Installation
@@ -17,18 +17,109 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'compute-ones' );
+var ones = require( 'compute-ones' );
 ```
 
-#### foo( arr )
+#### ones( dims[, opts] )
 
-What does this function do?
+Creates a ones-filled [`matrix`](https://github.com/dstructs/matrix) or [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). The `dims` argument may either be a positive `integer` specifying a `length` or an `array` of positive `integers` specifying dimensions.
+
+``` javascript
+var out;
+
+out = ones( 5 );
+// returns [ 1, 1, 1, 1, 1 ];
+
+out = ones( [2,1,2] );
+// returns [ [ [1,1] ], [ [1,1] ] ]
+```
+
+The function accepts the following `options`:
+
+*	__dtype__: output [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) or [`matrix`](https://github.com/dstructs/matrix) data type. Default: `generic`.
+
+By default, the output data structure is a generic [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). To output a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) or [`matrix`](https://github.com/dstructs/matrix), set the `dtype` option (see [`matrix`](https://github.com/dstructs/matrix) for a list of acceptable data types).
+
+``` javascript
+var out;
+
+out = ones( 5, {
+	'float32'
+});
+// returns Float32Array( [1,1,1,1,1] );
+
+out = ones( [3,2], {
+	'int32'
+});
+/*
+	[ 1 1
+	  1 1
+	  1 1 ]
+*/
+```
+
+__Notes__:
+*	Currently, for more than `2` dimensions, the function outputs a __generic__ `array` and ignores any specified `dtype`.
+
+	``` javascript
+	var out = ones( [2,1,3], {
+		'float32'
+	});
+	// returns [ [ [1,1,1] ], [ [1,1,1] ] ]
+	```
+
+
+#### ones.compile( dims )
+
+Compiles a `function` for creating ones-filled [`arrays`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) having specified dimensions.
+
+``` javascript
+var fcn, out;
+
+fcn = ones.compile( [2,1,3] );
+
+out = fcn();
+// returns [ [ [1,1,1] ], [ [1,1,1] ] ]
+
+out = fcn();
+// returns [ [ [1,1,1] ], [ [1,1,1] ] ]
+```
+
+__Notes__:
+*	when repeatedly creating [`arrays`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) having the same shape, creating a customized `ones` function will provide performance benefits.
+
+
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'compute-ones' );
+var ones = require( 'compute-ones' ),
+	out;
+
+// Plain arrays...
+
+// 1x10:
+out = ones( 10 );
+
+// 2x1x3:
+out = ones( [2,1,3] );
+
+// 5x5x5:
+out = ones( [5,5,5] );
+
+// 10x5x10x20:
+out = ones( [10,5,10,20] );
+
+// Typed arrays...
+out = ones( 10, {
+	'dtype': 'float32'
+});
+
+// Matrices...
+out = ones( [3,2], {
+	'dtype': 'int32'
+});
 ```
 
 To run the example code from the top-level application directory,

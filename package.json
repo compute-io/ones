@@ -25,12 +25,32 @@
   "keywords": [
     "compute.io",
     "compute",
-    "computation"
+    "computation",
+    "utilities",
+    "utils",
+    "array",
+    "arrays",
+    "matrix",
+    "matrices",
+    "one",
+    "ones",
+    "fill",
+    "typed-array",
+    "dstructs",
+    "ndarray",
+    "multidimensional"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/ones/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "compute-array-constructors": "^1.0.0",
+    "dstructs-matrix": "^2.0.0",
+    "validate.io-object": "^1.0.4",
+    "validate.io-positive-integer": "^1.0.0",
+    "validate.io-positive-integer-array": "^1.0.0",
+    "validate.io-string-primitive": "^1.0.0"
+  },
   "devDependencies": {
     "chai": "3.x.x",
     "mocha": "2.x.x",
