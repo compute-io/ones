@@ -86,7 +86,7 @@ out = fcn();
 ```
 
 __Notes__:
-*	when repeatedly creating [`arrays`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) having the same shape, creating a customized `ones` function will provide performance benefits.
+*	When repeatedly creating [`arrays`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) having the same shape, creating a customized `ones` function will provide performance benefits.
 
 
 
