@@ -80,24 +80,6 @@ describe( 'compute-ones', function tests() {
 		}
 	});
 
-	it( 'should throw an error if provided an unrecognized/unsupported data type option', function test() {
-		var values = [
-			'beep',
-			'boop'
-		];
-
-		for ( var i = 0; i < values.length; i++ ) {
-			expect( badValue( values[i] ) ).to.throw( Error );
-		}
-		function badValue( value ) {
-			return function() {
-				ones( [10], {
-					'dtype': value
-				});
-			};
-		}
-	});
-
 	it( 'should return a ones-filled matrix', function test() {
 		var actual, expected;
 
@@ -115,22 +97,13 @@ describe( 'compute-ones', function tests() {
 		assert.deepEqual( actual.data, expected );
 	});
 
-	it( 'should return a ones-filled typed-array', function test() {
+	it( 'should return a ones-filled typed array', function test() {
 		var actual, expected;
 
 		actual = ones( 5, {
 			'dtype': 'float32'
 		});
 		expected = new Float32Array( [1,1,1,1,1] );
-
-		assert.deepEqual( actual, expected );
-
-		actual = ones( [10], {
-			'dtype': 'uint8_clamped'
-		});
-		expected = new Uint8ClampedArray( [1,1,1,1,1,1,1,1,1,1] );
-
-		assert.deepEqual( actual, expected );
 	});
 
 	it( 'should return a ones-filled generic array', function test() {
@@ -155,22 +128,6 @@ describe( 'compute-ones', function tests() {
 		expected = [ [[1,1,1]], [[1,1,1]] ];
 
 		assert.deepEqual( actual, expected );
-	});
-
-	it( 'should support fast elements', function test() {
-		var actual, i;
-
-		this.timeout( 0 );
-
-		actual = ones( [100000] );
-		for ( i = 0; i < actual.length; i++ ) {
-			assert.strictEqual( actual[ i ], 1 );
-		}
-
-		actual = ones( [100000,2] );
-		for ( i = 0; i < actual.length; i++ ) {
-			assert.deepEqual( actual[ i ], [1,1] );
-		}
 	});
 
 	it( 'should, until ndarrays are supported, ignore the `dtype` option and return a generic multidimensional array for >2 dimensions', function test() {
