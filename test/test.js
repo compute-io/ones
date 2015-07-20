@@ -104,6 +104,8 @@ describe( 'compute-ones', function tests() {
 			'dtype': 'float32'
 		});
 		expected = new Float32Array( [1,1,1,1,1] );
+
+		assert.deepEqual( actual, expected );
 	});
 
 	it( 'should return a ones-filled generic array', function test() {
