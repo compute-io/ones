@@ -44,12 +44,12 @@ By default, the output data structure is a generic [`array`](https://developer.m
 var out;
 
 out = ones( 5, {
-	'float32'
+	'dtype': 'float32'
 });
 // returns Float32Array( [1,1,1,1,1] );
 
 out = ones( [3,2], {
-	'int32'
+	'dtype': 'int32'
 });
 /*
 	[ 1 1
@@ -63,7 +63,7 @@ __Notes__:
 
 	``` javascript
 	var out = ones( [2,1,3], {
-		'float32'
+		'dtype': 'float32'
 	});
 	// returns [ [ [1,1,1] ], [ [1,1,1] ] ]
 	```
