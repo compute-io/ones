@@ -1,63 +1,63 @@
 {
-	"name": "compute-ones",
-	"version": "0.0.0",
-	"description": "Creates a ones-filled matrix or array.",
-	"author": {
-		"name": "Athan Reines",
-		"email": "kgryte@gmail.com"
-	},
-	"contributors": [
-		{
-			"name": "Athan Reines",
-			"email": "kgryte@gmail.com"
-		}
-	],
-	"scripts": {
-		"test": "mocha",
-		"test-cov": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coverage -- -R spec",
-		"coverage": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/codecov/coverage --report lcovonly -- -R spec && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
-	},
-	"main": "./lib",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/compute-io/ones.git"
-	},
-	"keywords": [
-		"compute.io",
-		"compute",
-		"computation",
-		"utilities",
-		"utils",
-		"array",
-		"arrays",
-		"matrix",
-		"matrices",
-		"one",
-		"ones",
-		"fill",
-		"typed-array",
-		"dstructs",
-		"ndarray",
-		"multidimensional"
-	],
-	"bugs": {
-		"url": "https://github.com/compute-io/ones/issues"
-	},
-	"dependencies": {
-		"compute-array-constructors": "^1.0.0",
-		"dstructs-matrix": "^2.0.0",
-		"validate.io-object": "^1.0.4",
-		"validate.io-positive-integer": "^1.0.0",
-		"validate.io-positive-integer-array": "^1.0.0",
-		"validate.io-string-primitive": "^1.0.0"
-	},
-	"devDependencies": {
-		"chai": "3.x.x",
-		"mocha": "2.x.x",
-		"coveralls": "^2.11.1",
-		"istanbul": "^0.3.0",
-		"jshint": "2.x.x",
-		"jshint-stylish": "2.x.x"
-	},
-	"license": "MIT"
+  "name": "compute-ones",
+  "version": "1.0.0",
+  "description": "Creates a ones-filled matrix or array.",
+  "author": {
+    "name": "Athan Reines",
+    "email": "kgryte@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Athan Reines",
+      "email": "kgryte@gmail.com"
+    }
+  ],
+  "scripts": {
+    "test": "mocha",
+    "test-cov": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coverage -- -R spec",
+    "coverage": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/codecov/coverage --report lcovonly -- -R spec && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
+  },
+  "main": "./lib",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/compute-io/ones.git"
+  },
+  "keywords": [
+    "compute.io",
+    "compute",
+    "computation",
+    "utilities",
+    "utils",
+    "array",
+    "arrays",
+    "matrix",
+    "matrices",
+    "one",
+    "ones",
+    "fill",
+    "typed-array",
+    "dstructs",
+    "ndarray",
+    "multidimensional"
+  ],
+  "bugs": {
+    "url": "https://github.com/compute-io/ones/issues"
+  },
+  "dependencies": {
+    "compute-array-constructors": "^1.0.0",
+    "dstructs-matrix": "^2.0.0",
+    "validate.io-object": "^1.0.4",
+    "validate.io-positive-integer": "^1.0.0",
+    "validate.io-positive-integer-array": "^1.0.0",
+    "validate.io-string-primitive": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "3.x.x",
+    "mocha": "2.x.x",
+    "coveralls": "^2.11.1",
+    "istanbul": "^0.3.0",
+    "jshint": "2.x.x",
+    "jshint-stylish": "2.x.x"
+  },
+  "license": "MIT"
 }
