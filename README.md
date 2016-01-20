@@ -1,6 +1,6 @@
 Ones
 ===
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coverage-image]][coverage-url] [![Dependencies][dependencies-image]][dependencies-url]
 
 > Creates a ones-filled [matrix](https://github.com/dstructs/matrix) or array.
 
@@ -165,7 +165,7 @@ $ make view-cov
 
 ## Copyright
 
-Copyright &copy; 2015. The [Compute.io](https://github.com/compute-io) Authors.
+Copyright &copy; 2015-2016. The [Compute.io](https://github.com/compute-io) Authors.
 
 
 [npm-image]: http://img.shields.io/npm/v/compute-ones.svg
@@ -174,8 +174,8 @@ Copyright &copy; 2015. The [Compute.io](https://github.com/compute-io) Authors.
 [travis-image]: http://img.shields.io/travis/compute-io/ones/master.svg
 [travis-url]: https://travis-ci.org/compute-io/ones
 
-[coveralls-image]: https://img.shields.io/coveralls/compute-io/ones/master.svg
-[coveralls-url]: https://coveralls.io/r/compute-io/ones?branch=master
+[coverage-image]: https://img.shields.io/codecov/c/github/compute-io/ones/master.svg
+[coverage-url]: https://codecov.io/github/compute-io/ones?branch=master
 
 [dependencies-image]: http://img.shields.io/david/compute-io/ones.svg
 [dependencies-url]: https://david-dm.org/compute-io/ones
